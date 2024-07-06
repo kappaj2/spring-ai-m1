@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ollama
+  ai:
+
+    ollama:
+      base-url: http://localhost:11434/
+      model: llama3
+
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      model: gpt-4o
+#      chat:
+#        options:
+#          responseFormat: json_object
+
+    chat: # Disable the default ChatClient when multiple chat clients in the same app
+      client:
+        enabled: false
+      options:
+        responseFormat: json_object
